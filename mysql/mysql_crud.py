@@ -7,7 +7,7 @@ def connect_db():
             host='localhost',
             user="root",
             password="root@123",
-            database='raks_db',  # corrected spelling from 'datebase' to 'database'
+            database='raks_db',  
             port=3306,
             charset="utf8"
         )
@@ -24,7 +24,7 @@ def disconnect_db(connection):
         print('DB disconnection failed')
 
 def create_db():
-    query = 'create database IF NOT EXISTS nithin_db'
+    query = 'create database IF NOT EXISTS raks_db'
     connection = connect_db()
     try:
         cursor = connection.cursor()
@@ -53,14 +53,14 @@ def read_all_employees():
     try:
         cursor = connection.cursor()
         cursor.execute(query)
-        rows = cursor.fetchall()  # corrected from fetchAll() to fetchall()
+        rows = cursor.fetchall()  
         for row in rows:
             print(row)
-        print('All rows retrieved')  # corrected spelling from 'retrived'
+        print('All rows retrieved')  
         cursor.close()
         disconnect_db(connection)
     except:
-        print('Rows retrieval failed')  # corrected spelling from 'retrival'
+        print('Rows retrieval failed')  
 
 connection = connect_db()
 create_table()
