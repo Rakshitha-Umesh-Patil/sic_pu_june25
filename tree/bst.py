@@ -70,7 +70,7 @@ class BST:
         elif delete_data > temp.data:
             temp.right = self.delete_node(temp.right, delete_data)
         else:
-            # Node to be deleted found
+            
             if temp.left is None and temp.right is None:
                 return None
             elif temp.left is None:
@@ -151,6 +151,6 @@ class Menu:
                 break
 
 
-# Start the application
+
 menu = Menu()
 menu.start_app()
